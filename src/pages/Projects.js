@@ -1,5 +1,5 @@
-import Project from './../components/project/Project';
-import { projects } from '../helpers/projectsList';
+import Project from '../components/project/Project';
+import { projects } from './../helpers/projectsList';
 
 const Projects = () => {
   return (
@@ -7,13 +7,9 @@ const Projects = () => {
       <div className="container">
         <h2 className="title-1">Проекты</h2>
         <ul className="projects">
-          {projects.map(() => {
-            return <Project />;
+          {projects.map((project, index) => {
+            return <Project key={index} title={project.title} img={project.img} />;
           })}
-
-          {/* <Project />
-          <Project />
-          <Project /> */}
         </ul>
       </div>
     </main>
